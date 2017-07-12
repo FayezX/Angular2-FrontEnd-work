@@ -1,0 +1,86 @@
+<div layout="column" layout-align="center center">
+     <h1>Welcome Admin!</h1>
+</div>
+<br />
+<br />
+<!--Authors-->
+<button (click)="onGet('author')" class="btn btn-info btn-block">Get all Authors</button><br/>
+<div>
+    <table rules=rows>
+        <th style="width: 20%">AuthorId</th>
+        <th style="width: 20%">Authorname</th>
+        <th style="width: 25%">Books by Author</th>
+        <th style="width: 25%">Update</th>
+        <th style="width: 25%">Delete</th>
+        <tbody>
+            <tr *ngFor="#auth of getData">
+                <td>{{auth.authorId}}</td>
+                <td>{{auth.authorName}}</td>
+                <td>
+                    <div *ngFor="#books of auth.books">
+                    {{books.title}}
+                    <br />
+                    </div>
+                </td>
+                <td><button (click) = "onPut(auth.authorId)">Update</button><br/></td>
+                <td><button (click) = "onDelete(auth.authorId)">Delete</button><br/></td>
+            </tr>
+        </tbody>
+    </table>
+</div><br/>
+<!--<div>
+Output:{{getData}}
+</div>-->
+<input type="text" [(ngModel)]="authName"/>
+<button (click) = "onPost(authName)">Add new Author</button><br/>
+<div>Output:{{postData}}</div><br/>
+
+
+<!--Books-->
+<button (click) = "onGet('book')" class="btn btn-info btn-block">View all books</button><br/>
+<div>
+    <table rules=rows>
+        <th style="width: 20%">BookId</th>
+        <th style="width: 20%">title</th>
+        <th style="width: 25%">Authors of book</th>
+        <th style="width: 25%">Update</th>
+        <th style="width: 25%">delete</th>
+
+        <tbody>
+            <tr *ngFor="#books of getBook">
+                <td>{{books.bookId}}</td>
+                <td>{{books.title}}</td>
+                <td>
+                    <div *ngFor="#authors of books.authors">
+                    {{authors.authorName}}
+                    <br />
+                    </div>
+                </td>
+                <td><button (click) = "onPutBook(books.bookId)">Update</button><br/></td>
+                <td><button (click) = "onDeleteBook(books.bookId)">Delete</button><br/></td>
+            </tr>
+        </tbody>
+    </table>
+</div><br/>
+
+<input type="text" [(ngModel)]="bookTitle"/>
+<button (click) = "onPostBook(bookTitle)">Add a book</button><br/>
+<div>Output:{{postData}}</div><br/>
+
+<!--Branches-->
+<button (click) = "onPost()" class="btn btn-info btn-block">View all branches</button><br/>
+<button (click) = "onPost()">Add a branch</button><br/><br/>
+
+<!--Publishers-->
+<button (click) = "onPost()" class="btn btn-info btn-block">View all publishers</button><br/>
+
+<button (click) = "onPost()">Add a publisher</button><br/><br/>
+
+<!--Borrowers-->
+<button (click) = "onPost()" class="btn btn-info btn-block">View all borrowers</button><br/>
+
+<button (click) = "onPost()">Add a borrower</button><br/><br/>
+
+
+<!--Override-->
+<button (click) = "onPost()" class="btn btn-info btn-block">Override a book</button><br/>

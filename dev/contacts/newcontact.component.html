@@ -1,0 +1,43 @@
+<div layout="column" layout-align="center center">
+     <h1>Welcome Librarian!</h1>
+</div>
+<br />
+<br />
+<button (click)="onGet('branch')" class="btn btn-info btn-block">Get all branches</button><br/>
+  <div>
+      <table rules=rows>
+          <th style="width: 20%">BranchId</th>
+          <th style="width: 20%">Branchname</th>
+          <th style="width: 25%">Branchname</th>
+          <th style="width: 25%">Books in Branch</th>
+          <th style="width: 25%">Update Branch</th>
+          <th style="width: 25%">Info</th>
+          <tbody>
+              <tr *ngFor="#bran of getData">
+                  <td>{{bran.branchId}}</td>
+                  <td>{{bran.branchName}}</td>
+                  <td>{{bran.branchAddress}}</td>
+                  <td>
+                      <div *ngFor="#books of bran.books">
+                        {{books.title}}
+                        <br />
+                      </div>
+                  </td>
+                  <td><button (click) = "onPutBranch(bran.branchId)">Update</button><br/></td>
+                  <td>
+                    <button (click) = "onGetCopiesBranch(bran.branchId,books.bookId)">Get Copies</button>
+                    <br/>
+                    <button (click) = "onPutCopiesBranch(bran.branchId,books.nookId)">Update Copy</button><br/>
+                  </td>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+              </tr>
+          </tbody>
+      </table>
+  </div><br/>
+

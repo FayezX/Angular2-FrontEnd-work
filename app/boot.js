@@ -1,0 +1,1 @@
+System.register(["angular2/platform/browser","./app.component","angular2/router","angular2/common","angular2/http"],function(n,t){"use strict";var o,r,u,e,a;t&&t.id;return{setters:[function(n){o=n},function(n){r=n},function(n){u=n},function(n){e=n},function(n){a=n}],execute:function(){o.bootstrap(r.AppComponent,[u.ROUTER_PROVIDERS,e.FORM_PROVIDERS,a.HTTP_PROVIDERS])}}});

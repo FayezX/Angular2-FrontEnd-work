@@ -1,0 +1,19 @@
+<div>
+    <h1 style="padding-left:300px;margin-top:10px">Welcome to GCIT Library Management</h1>
+    <h1 style="padding-left:450px;margin-top:10px">Please Choose a role:</h1>
+ </div>
+
+<div style="padding-left:300px;margin-top:10px">
+  <!-- <contact-list></contact-list> -->
+    <header class="main">
+      <nav>
+        <a [routerLink]="['Contacts']">Administrator</a>
+        <a [routerLink]="['Newcontact']">Librarian</a>
+        <a [routerLink]="['About']">Borrower</a>
+        <!-- <a [routerLink]="['About']">About</a> -->
+      </nav>
+
+      <router-outlet></router-outlet>
+<!-- <http-test></http-test>-->
+  </header>
+</div>

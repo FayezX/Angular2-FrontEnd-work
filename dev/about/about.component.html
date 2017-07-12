@@ -1,0 +1,13 @@
+<div layout="column" layout-align="center center">
+     <h1>Welcome Borrower!</h1>
+</div><br /><br />
+<!--Override-->
+<input type="text" [(ngModel)]="authName" placeholder="Enter CardNo"/>
+<button (click) = "checkcardNo()" class="btn btn-info btn-block">Check Borrower CardNo</button><br/>
+<div>Output:{{postData}}</div><br/><br/><br/>
+
+<button (click) = "onPost()" class="btn btn-info btn-block">Checkout a book</button><br/>
+<div>Output:{{postData}}</div><br/><br/><br/>
+
+<button (click) = "onPost()" class="btn btn-info btn-block">Return a book</button><br/>
+<div>Output:{{postData}}</div><br/><br/><br/>
