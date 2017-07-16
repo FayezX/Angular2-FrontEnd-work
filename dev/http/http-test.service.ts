@@ -21,7 +21,7 @@ export class HTTPTestService{
     getUser(a:string){
       switch(a){
         case 'author':
-        return this._http.get("http://localhost:8081/admin/Authors").map(res=>res.json());
+        return this._http.get("http://52.207.230.195:8081/admin/Authors").map(res=>res.json());
         case 'book':
         return this._http.get("http://localhost:8081/admin/Books").map(res=>res.json());
         case 'branch':
