@@ -152,7 +152,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.post("http://localhost:8081/admin/addBook",data, {
+          return this._http.post("http://localhost:8081/admin/Books",data, {
             headers:header
           })
           .map(res => res.json());             
@@ -168,7 +168,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.delete("http://localhost:8081/admin/deleteAuthor?authorId="+id, {
+          return this._http.delete("http://localhost:8081/admin/Authors?authorId="+id, {
             headers:header
           })
           .map(res => res.json());                     
@@ -183,7 +183,7 @@ export class HTTPTestService{
           var data = json;
           var header = new Headers();
           header.append('Content-type', 'application/json');
-          return this._http.delete("http://localhost:8081/admin/deleteBook?bookId="+id, {
+          return this._http.delete("http://localhost:8081/admin/Books/"+id, {
             headers:header
           })
           .map(res => res.json());                
@@ -199,7 +199,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.put("http://localhost:8081/admin/updateAuthor",data, {
+          return this._http.put("http://localhost:8081/Authors",data, {
             headers:header
           })
           .map(res => res.json());                  
@@ -214,7 +214,7 @@ export class HTTPTestService{
           var data = json;
           var header = new Headers();
           header.append('Content-type', 'application/json');
-          return this._http.put("http://localhost:8081/admin/updateBook",data, {
+          return this._http.put("http://localhost:8081/admin/Books",data, {
             headers:header
           })
           .map(res => res.json());           
