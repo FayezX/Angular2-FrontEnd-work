@@ -21,11 +21,11 @@ export class HTTPTestService{
     getUser(a:string){
       switch(a){
         case 'author':
-        return this._http.get("http://52.207.230.195:8081/admin/Authors").map(res=>res.json());
+        return this._http.get("http://34.204.137.254:8081/admin/Authors").map(res=>res.json());
         case 'book':
-        return this._http.get("http://localhost:8081/admin/Books").map(res=>res.json());
+        return this._http.get("http://34.204.137.254:8081/admin/Books").map(res=>res.json());
         case 'branch':
-        return this._http.get("http://localhost:8081/librarian/librariansMenu").map(res=>res.json());
+        return this._http.get("http://34.204.137.254:8081/librarian/LibrariansMenu").map(res=>res.json());
       }
     };
     
@@ -69,7 +69,7 @@ export class HTTPTestService{
   }
 
   getCopies(br:string,bo:string){
-    return this._http.get("http://localhost:8081/librarian/viewCopyOfBook?branchId="+br+"&bookId="+bo).map(res=>res.json());
+    return this._http.get("http://34.204.137.254:8081/librarian/viewCopyOfBook?branchId="+br+"&bookId="+bo).map(res=>res.json());
   }
 
   onPost(name:string){
@@ -137,7 +137,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.post("http://localhost:8081/admin/addAuthor",data, {
+          return this._http.post("http://34.204.137.254:8081/admin/Authors",data, {
             headers:header
           })
           .map(res => res.json());               
@@ -152,7 +152,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.post("http://localhost:8081/admin/Books",data, {
+          return this._http.post("http://34.204.137.254:8081/admin/Books",data, {
             headers:header
           })
           .map(res => res.json());             
@@ -168,7 +168,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.delete("http://localhost:8081/admin/Authors?authorId="+id, {
+          return this._http.delete("http://34.204.137.254:8081/admin/Authors/"+id, {
             headers:header
           })
           .map(res => res.json());                     
@@ -183,7 +183,7 @@ export class HTTPTestService{
           var data = json;
           var header = new Headers();
           header.append('Content-type', 'application/json');
-          return this._http.delete("http://localhost:8081/admin/Books/"+id, {
+          return this._http.delete("http://34.204.137.254:8081/admin/Books/"+id, {
             headers:header
           })
           .map(res => res.json());                
@@ -199,7 +199,7 @@ export class HTTPTestService{
           var header = new Headers();
           header.append('Content-type', 'application/json');
 
-          return this._http.put("http://localhost:8081/Authors",data, {
+          return this._http.put("http://34.204.137.254:8081/admin/Authors",data, {
             headers:header
           })
           .map(res => res.json());                  
@@ -214,7 +214,7 @@ export class HTTPTestService{
           var data = json;
           var header = new Headers();
           header.append('Content-type', 'application/json');
-          return this._http.put("http://localhost:8081/admin/Books",data, {
+          return this._http.put("http://34.204.137.254:8081/admin/Books",data, {
             headers:header
           })
           .map(res => res.json());           
@@ -230,7 +230,7 @@ export class HTTPTestService{
           var data = json;
           var header = new Headers();
           header.append('Content-type', 'application/json');
-          return this._http.put("http://localhost:8081/librarian/updateBranch",data, {
+          return this._http.put("http://34.204.137.254:8081/librarian/Branches",data, {
             headers:header
           })
           .map(res => res.json());           
